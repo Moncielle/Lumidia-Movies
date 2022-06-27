@@ -1,1 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+    --auxiliar: #494949;
+    --primary:#241744;
+    --secondary: #673AB7;
+    --transition: #D1C4E9;
+    --letter: #ffff;
+    --letter-transition: #000;
+    --base:#c5c5c5;
+}
+
+body{
+    background-color: var(--auxiliar);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .header-left{
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+header .header-left .menu{
+    margin: 10px;
+    padding: 10px 20px;
+    width: 140px;
+    height: 50px;
+    background-color: var(--secondary);
+    border-radius: 5px;
+}
+
+header .header-left .menu:hover{
+    width: auto;
+    background-color: var(--transition);
+    color: var(--letter-transition);
+}
+
+header .header-left .menu a{
+    text-decoration: none;
+    color: var(--letter) ;
+    transition: all 0.6s linear;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 22px;
+}
+
+header .header-left .menu a:hover{
+    text-decoration: underline;
+    color: var(--letter-transition);
+}
+
+header .header-left .menu i{
+    color: var(--letter);
+    font-size: 22px;
+}
+
+header .header-left img{
+    width: 170px;
+    height: 70px;
+    margin-left: 15px;
+}
+
+header .user{
+    display: flex;
+    align-items: center;
+    margin: 10px 45px;
+}
+
+header .user img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.buttons{
+    width: 135px;
+    height: 40px;
+    background: var(--secondary);
+    border-radius: 15px;
+    border: 0;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: var(--letter);
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.buttons:hover{
+    border: 3px solid var(--secondary);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    color: var(--letter-transition);
+    background-color: var(--transition);
+}
+
+.container{
+    background-image: url(../img/fondo.jpg);
+    width: 100%;
+}
+
+.container .search{
+    width: 95%;
+    height: 180px;
+    margin: auto;
+    background: var(--base);
+    opacity: 0.6;
+    padding: 30px 35px;
+}
+
+.container .search form{
+    text-align: center;
+    padding: 10px;
+}
+
+.search form input{
+    width: 85%;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.container .cards-movies{
+    width: 95%;
+    margin: auto;
+    background: var(--base);
+    opacity: 0.6;
+}
+
+.container .page-navigation{
+    width: 95%;
+    height: 80px;
+    margin: auto;
+    padding: 20px;
+    background: var(--primary);
+    opacity: 0.9;
+    text-align: center;
+}
+
+footer{
+    width: 100%;
+    height: 180px;
+    background: var(--primary);
+    text-align: center;
+    color: var(--letter);
+    padding: 30px;
+    font-size: 18px;
+}

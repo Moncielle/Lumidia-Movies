@@ -9,23 +9,34 @@
 </head>
 <body>
     <header>
-        <div class="menu">
-            <a href="#">menu</a>
+        <div class="header-left">
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+                <a href="#">Menu</a>
+            </div>
             <img src="img/logo.png" alt="" class="logo">
         </div>
         <nav>
-            <div class="user">
-                <button>Iniciar Sesión</button>
-                <button>Registrarse</button>
+            <div id="user" class="user" style="display: none;">
+                <button class="buttons">Iniciar Sesión</button>
+                <button class="buttons">Registrarse</button>
             </div>
-            <div class="profile">
-                <img src="" alt="">
-                <button>Perfil</button>
-                <button>Salir</button>
+            <div id="profile" class="user">
+                <img src="https://lh3.googleusercontent.com/ogw/ADea4I47KcDC3BUnEglDVT7RlNtqqsHUSxTekf1AUyJM=s32-c-mo" alt="">
+                <button class="buttons">Perfil</button>
+                <button class="buttons">Salir</button>
             </div>
         </nav>
     </header>
     <main class="container">
+        <div class="search">
+            <h2>Bienvenidos</h2>
+            <p>Aquí podrás encontrar millones de películas. Explora ahora</p>
+            <form id="form">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search" id="search">
+            </form>
+        </div>
         <div id="cardsMovies" class="cards-movies">
             <img src="" alt="">
             <div class="movie-info">
@@ -37,15 +48,17 @@
             </div>
         </div>
         <div class="page-navigation">
-            <button id="btnPrevious">Anterior</button>
-            <button id="btnNext">Siguiente</button>
+            <button id="btnPrevious" class="buttons">Anterior</button>
+            <button id="btnNext" class="buttons">Siguiente</button>
         </div>
     </main>
     <footer>
         <p>Lumidia Movies es un servico de distribucion de peliculas</p>
-        <P>En Lumidia Movies no se almacena ningún vídeo, estos se encuentran alojados en sitios de terceros.</P>
+        <P>En Lumidia Movies no se almacena ningún vídeo, estos se encuentran alojados en sitios de terceros.</P><br>
         <span>&copy; 2022 LUMIDIA MOVIES - Todos los Derechos Reservados </span>
     </footer>
+
     <script src="js/home.js"></script>
+    <script src="https://kit.fontawesome.com/01087547a4.js" crossorigin="anonymous"></script>
 </body>
 </html>
