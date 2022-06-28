@@ -14,6 +14,9 @@
     --letter: #ffff;
     --letter-transition: #000;
     --base:#c5c5c5;
+    --green: #50c54e;
+    --orange: #f3923d;
+    --red:#e91e1e;
 }
 
 body{
@@ -22,6 +25,7 @@ body{
     margin: 0;
 }
 
+/*estilo para la barra del encabezado*/
 header{
     width: 100%;
     height: 80px;
@@ -31,6 +35,7 @@ header{
     align-items: center;
 }
 
+/*estilos para el contenedor de los elementos de menu y el logo*/
 header .header-left{
     display: flex;
     align-items: center;
@@ -77,6 +82,7 @@ header .header-left img{
     margin-left: 15px;
 }
 
+/*estilos para el contenedor de los botones del usuario*/
 header .user{
     display: flex;
     align-items: center;
@@ -111,18 +117,21 @@ header .user img{
     background-color: var(--transition);
 }
 
+/*estilo para el contenedor del fondo*/
 .container{
     background-image: url(../img/fondo.jpg);
     width: 100%;
 }
 
+/*estilos para el contenedor de los elementos de busqueda*/
 .container .search{
     width: 95%;
     height: 180px;
     margin: auto;
-    background: var(--base);
-    opacity: 0.6;
+    background: var(--primary);
+    opacity: 0.9;
     padding: 30px 35px;
+    color: var(--letter);
 }
 
 .container .search form{
@@ -133,17 +142,108 @@ header .user img{
 .search form input{
     width: 85%;
     height: 40px;
-    border-radius: 5px;
+    background-color: transparent;
+    border: 3px solid var(--secondary);
+    font-size: 16px;
+    border-radius: 50px;
     margin-left: 10px;
+    font-family: inherit;
+    padding: 15px 20px;
+    color: var(--letter);
 }
 
-.container .cards-movies{
+.search form input:focus{
+    outline: 0;
+    background-color: var(--secondary);
+}
+
+/*estilos para el contenedor donde estan alojadas las tarjetas de las peliculas*/
+.container .movie{
     width: 95%;
     margin: auto;
     background: var(--base);
-    opacity: 0.6;
+    opacity: 0.8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+/*contenedor principal de las tarjetas de las peliculas*/
+.movie .cards-movies{
+    width: 300px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.5);
+    background-color: var(--secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.cards-movies img{
+    width: 100%;
+}
+
+.movie-info{
+    color:var(--letter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info span{
+    background-color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/*cambio de colores en el contenido del span dependiendo de la calificacion*/
+.movie-info span.green{
+    color: var(--green);
+}
+
+.movie-info span.orange{
+    color: var(--orange);
+}
+
+.movie-info span.red{
+    color: var(--red);
+}
+
+/*descripcion de la pelicula*/
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--letter);
+    padding: 10px;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.4s ease-in;
+}
+
+.cards-movies:hover .overview{
+    transform: translateY(0);
+}
+
+.overview h3{
+    color: var(--secondary);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.overview span{
+    float: right;
+}
+
+/*contenedor de la navegación de la pagina*/
 .container .page-navigation{
     width: 95%;
     height: 80px;
@@ -154,6 +254,7 @@ header .user img{
     text-align: center;
 }
 
+/*contenedor del pie de página*/
 footer{
     width: 100%;
     height: 180px;
