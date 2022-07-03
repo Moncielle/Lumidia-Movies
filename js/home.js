@@ -74,6 +74,6 @@ form.addEventListener('submit', (event) => {
     }else{
         getMovie(apiURL);
     }
-});
+}); 
 
 getMovie(apiURL);
