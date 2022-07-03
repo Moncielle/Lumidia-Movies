@@ -33,13 +33,13 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 50px;
 }
 
 /*estilos para el contenedor de los elementos de menu y el logo*/
 header .header-left{
     display: flex;
     align-items: center;
-    margin: 15px;
 }
 
 header .header-left .menu{
@@ -77,16 +77,16 @@ header .header-left .menu i{
 }
 
 header .header-left img{
-    width: 170px;
+    width: 160px;
     height: 70px;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 /*estilos para el contenedor de los botones del usuario*/
 header .user{
     display: flex;
     align-items: center;
-    margin: 10px 45px;
+    margin: 10px 15px;
 }
 
 header .user img{
@@ -108,10 +108,10 @@ header .user img{
     color: var(--letter);
     cursor: pointer;
     margin-left: 15px;
+    transition: .3s ease all;
 }
 
 .buttons:hover{
-    border: 3px solid var(--secondary);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
     color: var(--letter-transition);
     background-color: var(--transition);
@@ -126,11 +126,11 @@ header .user img{
 /*estilos para el contenedor de los elementos de busqueda*/
 .container .search{
     width: 95%;
-    height: 180px;
+    height: 160px;
     margin: auto;
     background: var(--primary);
-    opacity: 0.9;
-    padding: 30px 35px;
+    opacity: 0.8;
+    padding: 15px 35px;
     color: var(--letter);
 }
 
@@ -160,27 +160,30 @@ header .user img{
 /*estilos para el contenedor donde estan alojadas las tarjetas de las peliculas*/
 .container .movie{
     width: 95%;
+    height: auto;
     margin: auto;
     background: var(--base);
     opacity: 0.8;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
 }
 
 /*contenedor principal de las tarjetas de las peliculas*/
 .movie .cards-movies{
     width: 300px;
-    margin: 30px;
+    margin: 30px 50px;
     border-radius: 5px;
     box-shadow: 0.2px 4px 5px rgba(0,0,0,0.5);
     background-color: var(--secondary);
     position: relative;
     overflow: hidden;
+
 }
 
 .cards-movies img{
     width: 100%;
+    height: 400px;
 }
 
 .movie-info{
@@ -188,12 +191,15 @@ header .user img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 15px;
     letter-spacing: 1px;
 }
 
 .movie-info h3{
     margin-top: 0;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 10px;
 }
 
 .movie-info span{
@@ -231,16 +237,28 @@ header .user img{
 
 .cards-movies:hover .overview{
     transform: translateY(0);
+    cursor: pointer;
 }
 
 .overview h3{
     color: var(--secondary);
     text-align: center;
     letter-spacing: 1px;
+    font-size: 19px;
+}
+
+.overview p{
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
 }
 
 .overview span{
     float: right;
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--secondary);
 }
 
 /*contenedor de la navegación de la pagina*/
@@ -250,7 +268,7 @@ header .user img{
     margin: auto;
     padding: 20px;
     background: var(--primary);
-    opacity: 0.9;
+    opacity: 0.8;
     text-align: center;
 }
 

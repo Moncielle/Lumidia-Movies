@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="img/page-logo.png">
     <link rel="stylesheet" href="css/home.css">
-    <title>Movies</title>
+    <title>Lumidia Movies</title>
 </head>
 <body>
     <header>
@@ -18,13 +19,13 @@
         </div>
         <nav>
             <div id="user" class="user">
-                <button class="buttons">Iniciar Sesión</button>
-                <button class="buttons">Registrarse</button>
+                <button id="Login" class="buttons">Iniciar Sesión</button>
+                <button id="SignIn" class="buttons">Registrarse</button>
             </div>
             <div id="profile" class="user" style="display: none;">
                 <img src="https://lh3.googleusercontent.com/ogw/ADea4I47KcDC3BUnEglDVT7RlNtqqsHUSxTekf1AUyJM=s32-c-mo" alt="">
-                <button class="buttons">Perfil</button>
-                <button class="buttons">Salir</button>
+                <button id="profile"  class="buttons">Perfil</button>
+                <button id="close" class="buttons">Salir</button>
             </div>
         </nav>
     </header>
@@ -37,8 +38,9 @@
                 <input type="text" placeholder="Buscar película" id="search">
             </form>
         </div>
-        <div class="movie">
-            <div id="cardsMovies" class="cards-movies">
+        <div id="containerMovies" class="movie">
+            <!--
+            <div class="cards-movies">
                 <img src="https://www.cinemascomics.com/wp-content/uploads/2020/04/wonder-woman-1984-poster.jpg" alt="">
                 <div class="movie-info">
                     <h3>Movie Title</h3>
@@ -50,18 +52,7 @@
                     <span>year</span>
                 </div>
             </div>
-            <div id="cardsMovies" class="cards-movies">
-                <img src="https://www.cinemascomics.com/wp-content/uploads/2020/04/wonder-woman-1984-poster.jpg" alt="">
-                <div class="movie-info">
-                    <h3>Movie Title</h3>
-                    <span class="green">9.6</span>
-                </div>
-                <div class="overview">
-                    <h3>Descripción General</h3>
-                    <p>Descripción de la pelicula</p>
-                    <span>year</span>
-                </div>
-            </div>
+            -->
         </div>
         <div class="page-navigation">
             <button id="btnPrevious" class="buttons">Anterior</button>
