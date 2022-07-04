@@ -3,18 +3,20 @@ const form = document.getElementById('form');
 const search = document.getElementById('search');
 const menu = document.getElementById('btnMenu');
 const btnclose = document.getElementById('btnClose');
+const tags = document.getElementById('container-tags');
 const btnPreviuos = document.getElementById('btnPrevious');
 const btnNext = document.getElementById('btnNext');
 
 //constantes para almacenar las diferentes URL de la api 
 const apiURL = 'https://api.themoviedb.org/3/movie/popular?api_key=1271682cfb8fb295ba15c7bdb1488526&language=es-MX';
 const searchURL = 'https://api.themoviedb.org/3/search/movie?api_key=1271682cfb8fb295ba15c7bdb1488526&language=es-MX';
-const genres = 'genres.json';
-let nav = 1;
+
+let currentPage = 1;
 
 //funcion para cargar las tarjetas al html (los elementos de la api)
 const getMovie = async (url) =>{
     const response = await fetch(url);
+    console.log(response);
     if(response.status === 200){
         const data = await response.json();
         showMovies(data.results); 
@@ -79,6 +81,7 @@ form.addEventListener('submit', (event) => {
 //evento para abrir el contenedor de categorias cuando se da clic en el boton de menu
 menu.addEventListener('click', () => {
     document.getElementById("menuContainer").style.display = '';
+    setGenere();
 });
 
 //funcion para cerrar el contenedor de categorias
@@ -86,18 +89,32 @@ btnclose.addEventListener('click', () => {
     document.getElementById("menuContainer").style.display = 'none';
 });
 
-/*btnNext.addEventListener('click', () => {
-    if (nav < 1000) {
-        nav += 1;
-        getMovie(apiURL);
+/*función para generar las categorías en la barra de menu mediante el json
+const setGenere = () => {
+    tags.innerHTML = '';
+    genres.forEach(genre => {
+        const containerTag = document.createElement('div');
+        containerTag.classList.add('tag');
+        containerTag.id=genre.id;
+        containerTag.innerText = genre.name;
+        tags.append(containerTag);
+    });
+};*/
+
+//función cuando se le da clic en el boton de siguiente cambia las tarjetas de peliculas, cargando nuevas
+btnNext.addEventListener('click', () => {
+    if (currentPage < 1000) {
+        currentPage += 1;
+        getMovie(`https://api.themoviedb.org/3/movie/popular?api_key=1271682cfb8fb295ba15c7bdb1488526&language=es-MX'&page=${currentPage}`);
     }
 });
 
+//funcion del boton anterior para regresar a los elementos cargados de las tarjetas de peliculas
 btnPreviuos.addEventListener('click', () => {
-    if (nav > 1) {
-        nav -= 1;
-        getMovie(apiURL);
+    if (currentPage > 1) {
+        currentPage -= 1;
+        getMovie(`https://api.themoviedb.org/3/movie/popular?api_key=1271682cfb8fb295ba15c7bdb1488526&language=es-MX'&page=${currentPage}`);
     }
-});*/
+});
 
 getMovie(apiURL);
