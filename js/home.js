@@ -19,6 +19,7 @@ const getMovie = async (url) =>{
     console.log(response);
     if(response.status === 200){
         const data = await response.json();
+        console.log(data);
         showMovies(data.results); 
     }else if (response.status === 404){
         console.log('error');
@@ -88,18 +89,6 @@ menu.addEventListener('click', () => {
 btnclose.addEventListener('click', () => {
     document.getElementById("menuContainer").style.display = 'none';
 });
-
-/*función para generar las categorías en la barra de menu mediante el json
-const setGenere = () => {
-    tags.innerHTML = '';
-    genres.forEach(genre => {
-        const containerTag = document.createElement('div');
-        containerTag.classList.add('tag');
-        containerTag.id=genre.id;
-        containerTag.innerText = genre.name;
-        tags.append(containerTag);
-    });
-};*/
 
 //función cuando se le da clic en el boton de siguiente cambia las tarjetas de peliculas, cargando nuevas
 btnNext.addEventListener('click', () => {
