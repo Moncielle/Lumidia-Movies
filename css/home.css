@@ -42,38 +42,17 @@ header .header-left{
     align-items: center;
 }
 
-header .header-left .menu{
-    margin: 10px;
-    padding: 10px 20px;
-    width: 140px;
+header .header-left button{
+    width: 120px;
     height: 50px;
-    background-color: var(--secondary);
-    border-radius: 5px;
+    border-radius: 2px;
+    font-size: 20px;
+    text-align: left;
+    padding: 0 20px;
 }
 
-header .header-left .menu:hover{
-    width: auto;
-    background-color: var(--transition);
-    color: var(--letter-transition);
-}
-
-header .header-left .menu a{
-    text-decoration: none;
-    color: var(--letter) ;
-    transition: all 0.6s linear;
-    border-radius: 5px;
-    margin-left: 5px;
-    font-size: 22px;
-}
-
-header .header-left .menu a:hover{
-    text-decoration: underline;
-    color: var(--letter-transition);
-}
-
-header .header-left .menu i{
-    color: var(--letter);
-    font-size: 22px;
+header .header-left .icon{
+    margin-right: 2px;
 }
 
 header .header-left img{
@@ -115,6 +94,74 @@ header .user img{
     box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
     color: var(--letter-transition);
     background-color: var(--transition);
+}
+
+/*Estilos para la barra lateral izquierda de categorias*/
+.menu{
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    transition: all 600ms ease;
+    z-index: 1;
+}
+
+.menu .container-menu{
+    width: 100%;
+    max-width: 250px;
+    background: var(--primary);
+    height: auto;
+    position: relative;
+    transition: all 600ms ease;
+}
+
+.menu .header-tags{
+    display: flex;
+    padding: 10px;
+    color: var(--letter);
+}
+
+.menu .header-tags h3{
+    letter-spacing: 2px;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.menu .header-tags button{
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 15px;
+    margin-top: 11px;
+}
+
+.menu .header-tags button i{
+    font-size: 24px;
+    text-align: center;
+    color: var(--letter);
+}
+
+/*contenedor de cada div que tendrá la categoria o genero de la pelicula*/
+.menu .tag{
+    padding: 20px;
+    color: var(--letter);
+    border-left: 5px solid transparent;
+    transition: all 600ms ease;
+    cursor: pointer;
+}
+
+.menu .tag:hover{
+    border-left: 5px solid var(--secondary);
+    background: #683ab75c;
+}
+
+.menu .tag i{
+    margin-right: 15px;
 }
 
 /*estilo para el contenedor del fondo*/
@@ -178,7 +225,6 @@ header .user img{
     background-color: var(--secondary);
     position: relative;
     overflow: hidden;
-
 }
 
 .cards-movies img{

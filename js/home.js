@@ -1,23 +1,23 @@
 const containerCards = document.getElementById('containerMovies');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
+const menu = document.getElementById('btnMenu');
+const btnclose = document.getElementById('btnClose');
 const btnPreviuos = document.getElementById('btnPrevious');
 const btnNext = document.getElementById('btnNext');
 
 //constantes para almacenar las diferentes URL de la api 
 const apiURL = 'https://api.themoviedb.org/3/movie/popular?api_key=1271682cfb8fb295ba15c7bdb1488526&language=es-MX';
 const searchURL = 'https://api.themoviedb.org/3/search/movie?api_key=1271682cfb8fb295ba15c7bdb1488526&language=es-MX';
-let page = 1;
+const genres = 'genres.json';
+let nav = 1;
 
 //funcion para cargar las tarjetas al html (los elementos de la api)
 const getMovie = async (url) =>{
     const response = await fetch(url);
-    console.log(response);
     if(response.status === 200){
         const data = await response.json();
-        console.log(data.results );
         showMovies(data.results); 
-
     }else if (response.status === 404){
         console.log('error');
     }else{
@@ -75,5 +75,7 @@ form.addEventListener('submit', (event) => {
         getMovie(apiURL);
     }
 }); 
+
+
 
 getMovie(apiURL);
