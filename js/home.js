@@ -76,6 +76,28 @@ form.addEventListener('submit', (event) => {
     }
 }); 
 
+//evento para abrir el contenedor de categorias cuando se da clic en el boton de menu
+menu.addEventListener('click', () => {
+    document.getElementById("menuContainer").style.display = '';
+});
 
+//funcion para cerrar el contenedor de categorias
+btnclose.addEventListener('click', () => {
+    document.getElementById("menuContainer").style.display = 'none';
+});
+
+/*btnNext.addEventListener('click', () => {
+    if (nav < 1000) {
+        nav += 1;
+        getMovie(apiURL);
+    }
+});
+
+btnPreviuos.addEventListener('click', () => {
+    if (nav > 1) {
+        nav -= 1;
+        getMovie(apiURL);
+    }
+});*/
 
 getMovie(apiURL);
